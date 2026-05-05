@@ -339,7 +339,7 @@ function submitForm() {
       phone: phone,
       consent_text: 'Sutinku gauti Orion naujienas ir pasiūlymus el. paštu. Prenumeratą galite atšaukti bet kada.',
       source: 'Orion renginys 2026-05-08',
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toLocaleString('lt-LT', { timeZone: 'Europe/Vilnius' })
     })
   })
   .then(function() {
