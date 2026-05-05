@@ -305,7 +305,7 @@
 </div>
 
 <script>
-var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxKo4VfV5K90vRDowHrNb1RFQvBd2X0tiJQMKzeS5vb5Ar92jda1ZCs0UXFNXrAKGDFvQ/exec';
+var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwTFpM0np4okE3D-nZDWG7hTRpTxQvXeA8GiY-3sv4VS_bQHgmjp9leSDL53xQychhUjQ/exec';
 
 function submitForm() {
   var name = document.getElementById('name').value.trim();
@@ -333,7 +333,14 @@ function submitForm() {
     method: 'POST',
     mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name: name, email: email, phone: phone })
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      phone: phone,
+      consent_text: 'Sutinku gauti Orion naujienas ir pasiūlymus el. paštu. Prenumeratą galite atšaukti bet kada.',
+      source: 'Orion renginys 2026-05-08',
+      timestamp: new Date().toISOString()
+    })
   })
   .then(function() {
     document.getElementById('form-section').style.display = 'none';
